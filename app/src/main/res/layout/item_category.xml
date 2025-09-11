@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/itemRoot"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:layout_margin="12dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="8dp"
+    app:strokeWidth="0dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Ảnh nền -->
+        <ImageView
+            android:id="@+id/imgSound"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/app_name" />
+
+        <!-- Overlay gradient (thân thiện, ấm áp) -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+           />
+
+        <!-- Text nằm trong overlay -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/tvSoundTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sound Category"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:ellipsize="end" />
+
+            <TextView
+                android:id="@+id/tvSoundSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Home • sound"
+                android:textColor="#100101"
+                android:textSize="13sp"
+                android:maxLines="1"
+                android:ellipsize="end" />
+        </LinearLayout>
+    </FrameLayout>
+</com.google.android.material.card.MaterialCardView>
