@@ -22,7 +22,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.kenhtao.sites.hearthhome.R;
+import com.kenhtao.sites.hearthhome.adapter.PlayLayerAdapter;
 import com.kenhtao.sites.hearthhome.models.LayerSound;
+import com.kenhtao.sites.hearthhome.timer.TimerCallBack;
+import com.kenhtao.sites.hearthhome.timer.TimerDialog;
+import com.kenhtao.sites.hearthhome.timer.TimerViewModel;
+import com.kenhtao.sites.hearthhome.ui.custom.CustomSoundPickerActivity;
+import com.kenhtao.sites.hearthhome.utils.MixLocalManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,7 +71,7 @@ public class CategoryPlayerActivity extends AppCompatActivity {
         setupListeners();
         setupLayerSounds();
 
-        mapCategoryToLocalSound(); // ✅ map CATEGORY_ID -> raw file
+        mapCategoryToLocalSound();
     }
 
     private void initViews() {
@@ -88,17 +94,17 @@ public class CategoryPlayerActivity extends AppCompatActivity {
 
     private void setupBackgroundImage() {
         if (categoryAvatar != null && categoryAvatar.matches("\\d+")) {
-            // avatar local (drawable resource id)
+
             int resId = Integer.parseInt(categoryAvatar);
             imgBackground.setImageResource(resId);
         } else if (categoryAvatar != null && categoryAvatar.startsWith("http")) {
-            // avatar từ url
+
             Glide.with(this).load(categoryAvatar)
                     .placeholder(R.drawable.birds_singing)
                     .error(R.drawable.birds_singing)
                     .into(imgBackground);
         } else {
-            // fallback
+
             imgBackground.setImageResource(R.drawable.birds_singing);
         }
     }
@@ -157,15 +163,13 @@ public class CategoryPlayerActivity extends AppCompatActivity {
 
 
 
-    /**
-     * ✅ Map Category ID sang file R.raw local
-     */
+
     private void mapCategoryToLocalSound() {
         switch ((int) categoryId) {
-            case 1: mainSoundResId = R.raw.mountain; break;
-            case 2: mainSoundResId = R.raw.nature; break;
-            case 3: mainSoundResId = R.raw.city; break;
-            case 4: mainSoundResId = R.raw.instrument; break;
+            case 1: mainSoundResId = R.raw.kitchen; break;
+            case 2: mainSoundResId = R.raw.dining; break;
+            case 3: mainSoundResId = R.raw.living_room; break;
+            case 4: mainSoundResId = R.raw.bedroom; break;
             default:
                 Toast.makeText(this, "❌ Không tìm thấy nhạc local", Toast.LENGTH_SHORT).show();
         }
@@ -213,7 +217,7 @@ public class CategoryPlayerActivity extends AppCompatActivity {
                     int iconResId = data.getIntExtra("iconResId", 0);
 
                     if (soundId != -1 && soundResId != 0) {
-                        // ✅ Tạo LayerSound từ resource local
+
                         LayerSound newLayer = new LayerSound(
                                 soundId,
                                 name,
@@ -233,9 +237,7 @@ public class CategoryPlayerActivity extends AppCompatActivity {
             }
     );
 
-    /**
-     * Lưu Mix âm thanh vào local storage
-     */
+
     private void saveMixToLocal() {
         try {
             if (layers == null || layers.isEmpty()) {
@@ -245,9 +247,9 @@ public class CategoryPlayerActivity extends AppCompatActivity {
 
             // Lưu mix vào local qua MixLocalManager
             MixLocalManager.saveMixFull(
-                    this,       // context
-                    categoryId, // ID của category hoặc mix
-                    layers      // danh sách các layer đang active
+                    this,
+                    categoryId,
+                    layers
             );
 
             Log.d("SAVE_MIX", "✅ Mix đã auto-save xuống local");

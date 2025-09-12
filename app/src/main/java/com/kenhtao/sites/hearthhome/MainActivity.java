@@ -13,7 +13,9 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.kenhtao.sites.hearthhome.ui.custom.CustomFragment;
 import com.kenhtao.sites.hearthhome.ui.home.HomeFragment;
+import com.kenhtao.sites.hearthhome.ui.profile.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
@@ -44,9 +46,9 @@ public class MainActivity extends AppCompatActivity {
                     if (item.getItemId() == R.id.nav_sound) {
                         selectedFragment = new HomeFragment();
                     } else if (item.getItemId() == R.id.nav_custom) {
-//                        selectedFragment = new CustomFragment();
+                        selectedFragment = new CustomFragment();
                     } else if (item.getItemId() == R.id.nav_profile) {
-//                        selectedFragment = new ProfileFragment();
+                        selectedFragment = new ProfileFragment();
                     }
 
                     return loadFragment(selectedFragment);

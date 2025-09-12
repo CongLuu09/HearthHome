@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    app:cardCornerRadius="28dp"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="#549064"
+    app:strokeWidth="1dp"
+    app:strokeColor="#406A1818">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="24dp">
+
+        <!-- Icon + Title -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingBottom="16dp">
+
+            <ImageView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:src="@drawable/ic_time"
+                android:contentDescription="Timer Icon"
+                app:tint="@color/red_300" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đặt giờ tùy chỉnh"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/blue_300"
+                android:letterSpacing="0.04"
+                android:paddingTop="12dp"/>
+        </LinearLayout>
+
+        <!-- Subtitle -->
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chọn giờ và phút bạn mong muốn"
+            android:textSize="14sp"
+            android:textColor="#CCFF90"
+            android:paddingBottom="20dp" />
+
+        <!-- Number Picker Container -->
+        <LinearLayout
+            android:id="@+id/timePickerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingVertical="16dp"
+            android:paddingHorizontal="20dp">
+
+            <NumberPicker
+                android:id="@+id/npHour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/NumberPickerTheme.Light.Minimal"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:textColor="@color/blue_700"/>
+
+            <NumberPicker
+                android:id="@+id/npMinute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/NumberPickerTheme.Light.Minimal"/>
+        </LinearLayout>
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="28dp"
+            android:weightSum="2">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCancelCustomTime"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Hủy"
+                android:textColor="#2A1CD1"
+                app:strokeColor="#40790FA6"
+                app:cornerRadius="24dp"
+                android:paddingVertical="12dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSetCustomTime"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Xác nhận"
+                android:textColor="@color/blue_600"
+                android:backgroundTint="@color/teal_200"
+                app:cornerRadius="24dp"
+                android:layout_marginStart="12dp"
+                android:paddingVertical="12dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

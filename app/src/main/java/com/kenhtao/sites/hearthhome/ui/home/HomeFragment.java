@@ -62,6 +62,7 @@ public class HomeFragment extends Fragment {
         categoryList.add(new Category("1", "Kitchen", String.valueOf(R.drawable.kitchen)));
         categoryList.add(new Category("2", "Dinging", String.valueOf(R.drawable.dining)));
         categoryList.add(new Category("3", "Living Room", String.valueOf(R.drawable.living_room)));
+        categoryList.add(new Category("4", "Bedroom", String.valueOf(R.drawable.bedroom)));
         categoryAdapter.notifyDataSetChanged();
     }
 }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- NumberPicker tối giản - Light -->
+    <style name="NumberPickerTheme.Light.Minimal" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:textColorPrimary">#FFFFFF</item> <!-- Màu chữ chính -->
+        <item name="android:textColorSecondary">#80FFFFFF</item> <!-- Màu chữ mờ -->
+        <item name="android:colorControlNormal">#80FFFFFF</item>
+        <item name="android:colorControlActivated">#3DDC84</item> <!-- Màu accent khi chọn -->
+        <item name="android:colorAccent">#3DDC84</item>
+    </style>
+
+    <!-- NumberPicker tối giản - Dark -->
+    <style name="NumberPickerTheme.Dark.Minimal" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:textColorSecondary">#66FFFFFF</item>
+        <item name="android:colorControlNormal">#66FFFFFF</item>
+        <item name="android:colorControlActivated">#FFD700</item>
+        <item name="android:colorAccent">#FFD700</item>
+    </style>
+
+    <style name="CustomTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#121212</item>
+        <item name="colorPrimaryVariant">#E64A19</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="android:statusBarColor">#121212</item>
+    </style>
+
+    <style name="CircleImage">
+        <item name="shapeAppearanceOverlay">@style/CircleShapeAppearance</item>
+    </style>
+
+    <style name="CircleShapeAppearance">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+
+</resources>

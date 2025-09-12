@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:background="@color/green_50"
+    >
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="28dp"
+        app:cardCornerRadius="32dp"
+        app:cardElevation="16dp"
+        app:cardBackgroundColor="#E6E4E3DB"
+        app:strokeWidth="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="28dp">
+
+            <!-- Tiêu đề -->
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="8dp"
+                android:text="Hẹn giờ ngủ"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.03"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Guidelines cho lưới 3 cột -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide_col1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.33" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide_col2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.66" />
+
+            <!-- Hàng 1 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn5min"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="5 phút"
+                app:cornerRadius="50dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/blue_700"
+                app:iconPadding="8dp"
+                app:layout_constraintEnd_toStartOf="@id/guide_col1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn15min"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="15 phút"
+                app:cornerRadius="50dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/blue_700"
+                app:iconPadding="8dp"
+                app:layout_constraintEnd_toStartOf="@id/guide_col2"
+                app:layout_constraintStart_toEndOf="@id/guide_col1"
+                app:layout_constraintTop_toTopOf="@id/btn5min" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn30min"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="30 phút"
+                app:cornerRadius="50dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/blue_700"
+                app:iconPadding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guide_col2"
+                app:layout_constraintTop_toTopOf="@id/btn5min" />
+
+            <!-- Hàng 2 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn45min"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="45 phút"
+                app:cornerRadius="50dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/blue_700"
+                app:layout_constraintEnd_toStartOf="@id/guide_col1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn5min" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn1h"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="1 giờ"
+                app:cornerRadius="50dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/blue_700"
+                app:layout_constraintEnd_toStartOf="@id/guide_col2"
+                app:layout_constraintStart_toEndOf="@id/guide_col1"
+                app:layout_constraintTop_toTopOf="@id/btn45min" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn1h30"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="1h 30 phút"
+                app:cornerRadius="50dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/blue_700"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guide_col2"
+                app:layout_constraintTop_toTopOf="@id/btn45min" />
+
+            <!-- Hàng 3 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn2h"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="2 giờ"
+                app:cornerRadius="50dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/blue_700"
+                app:layout_constraintEnd_toStartOf="@id/guide_col1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn45min" />
+
+            <!-- Nút tùy chỉnh -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCustom"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="📝 Thời gian tùy chỉnh"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                app:cornerRadius="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn2h" />
+
+            <!-- Nút hủy -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCancelTimer"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="❌ Hủy hẹn giờ"
+                android:textColor="@color/red_600"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnCustom" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</ScrollView>

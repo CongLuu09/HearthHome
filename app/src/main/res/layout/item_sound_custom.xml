@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/itemRoot"
+    android:layout_width="100dp"
+    android:layout_height="140dp"
+    android:layout_margin="6dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="3dp"
+    >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Ảnh nền -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgIcon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/app_name"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.SmallComponent" />
+
+        <!-- Overlay mờ dưới ảnh để text dễ đọc -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="4dp"
+            android:background="@drawable/bg_gradient">
+
+            <TextView
+                android:id="@+id/tvLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:gravity="center"
+                android:text="Heavy Rain"
+                android:textColor="@android:color/white"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium" />
+        </LinearLayout>
+
+        <!-- Lock icon -->
+        <ImageView
+            android:id="@+id/imgLock"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="top|end"
+            android:layout_margin="6dp"
+            android:contentDescription="Lock Icon"
+            android:scaleType="centerInside"
+            android:visibility="gone"
+            android:padding="3dp"/>
+    </FrameLayout>
+</com.google.android.material.card.MaterialCardView>

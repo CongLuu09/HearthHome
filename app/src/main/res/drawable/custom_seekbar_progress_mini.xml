@@ -1,0 +1,19 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Nền track -->
+    <item android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <size android:height="1dp"/>
+            <solid android:color="#E4FAAB"/>
+        </shape>
+    </item>
+
+    <!-- Phần đã chạy -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape android:shape="rectangle">
+                <size android:height="1dp"/>
+                <solid android:color="#DCF0F2"/> <!-- màu xanh ví dụ -->
+            </shape>
+        </clip>
+    </item>
+</layer-list>

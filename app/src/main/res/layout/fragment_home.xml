@@ -9,7 +9,7 @@
 
     <TextView
         android:id="@+id/tv_title"
-        android:text="Melodia Sound"
+        android:text="Heath Home Sound"
         android:textColor="#ffffff"
         android:textSize="22sp"
         android:textStyle="bold"

@@ -57,6 +57,7 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.google.android.material:material:1.11.0")
 
+
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)

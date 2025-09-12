@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/itemRoot"
+    android:layout_width="95dp"
+    android:layout_height="115dp"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp"
+    app:strokeWidth="0.6dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Hình nền full -->
+        <ImageView
+            android:id="@+id/imgSound"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/chair"
+            android:contentDescription="@string/app_name" />
+
+        <!-- Gradient overlay nhỏ hơn -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/gradient" />
+
+        <!-- Text -->
+        <LinearLayout
+            android:id="@+id/textContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:padding="3dp">
+
+            <TextView
+                android:id="@+id/tvSoundTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Heavy Rain"
+                android:textColor="@android:color/white"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:ellipsize="end" />
+
+            <TextView
+                android:id="@+id/tvSoundSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hearth ~ Home"
+                android:textColor="#E0E0E0"
+                android:textSize="9sp"
+                android:maxLines="1"
+                android:ellipsize="end" />
+        </LinearLayout>
+
+        <!-- SeekBar mini -->
+        <SeekBar
+            android:id="@+id/seekBarVolume"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="2dp"
+            android:max="100"
+            android:progress="40"
+            android:progressDrawable="@drawable/custom_seekbar_progress_mini"
+            android:thumb="@drawable/custom_seekbar_thumb_mini" />
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>
